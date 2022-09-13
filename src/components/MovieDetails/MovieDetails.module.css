@@ -1,0 +1,29 @@
+
+.movieDetalis {
+    display: flex;
+    margin: 24px;
+    gap: 24px;
+}
+    
+.genreList {
+    display: inline-flex;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.goBack {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 0;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.goBack:hover {
+    color: #5bb66f;
+}
