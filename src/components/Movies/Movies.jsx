@@ -2,7 +2,7 @@ import { MdSearch } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
-import {toast} from 'react-toastify';
+// import {toast} from 'react-toastify';
 import { Loader } from "components/loader/loader";
 import { fetchSearchMovies } from "services/movieApi";
 import s from './Movies.module.css';
