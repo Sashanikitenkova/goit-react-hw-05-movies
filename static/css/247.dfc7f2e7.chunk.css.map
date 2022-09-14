@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/247.dfc7f2e7.chunk.css","mappings":"AAAA,sBAGI,QAAS,CAFT,cAAe,CACf,OAAQ,CAER,sCAAgC,CAAhC,8BAAgC,CAChC,UACJ","sources":["components/loader/loader.module.css"],"sourcesContent":[".Loader {\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    z-index: 99;\n}"],"names":[],"sourceRoot":""}
