@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { fetchCast } from "services/movieApi";
 import { Loader } from "components/loader/loader";
 
@@ -26,6 +26,9 @@ const Cast = () => {
             return (
                 <div>
                     {loading && <Loader />}
+                    {casts.length === 0 ? (
+                        <p>There is no information about the cast...</p>
+                        ) : (
                     <ul>
                         {
                           casts.map(cast => (
@@ -37,6 +40,7 @@ const Cast = () => {
                            ))
                         }
                     </ul>
+                    )}
                 </div>
             )        
 };

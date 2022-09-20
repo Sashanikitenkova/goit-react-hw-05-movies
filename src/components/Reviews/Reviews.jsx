@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { fetchReviews } from "services/movieApi";
 import { Loader } from "components/loader/loader";
 
@@ -26,16 +26,20 @@ const Reviews = () => {
             return (
                 <div>
                     {loading && <Loader />}
-                    <ul>
-                    {
-                        reviews.map(review => (
-                            <li key={review.id} >
-                                <h3>Author: {review.author}</h3>
-                                <span>{review.content}</span>
-                            </li>
-                        ))
-                    }
-                    </ul>
+                    {reviews.length === 0 ? (
+                        <p>There is no information about the reviews...</p>
+                        ) : (
+                        <ul>
+                        {
+                            reviews.map(review => (
+                                <li key={review.id} >
+                                    <h3>Author: {review.author}</h3>
+                                    <span>{review.content}</span>
+                                </li>
+                            ))
+                        }
+                        </ul>
+                        )}
                 </div>
             )         
 };

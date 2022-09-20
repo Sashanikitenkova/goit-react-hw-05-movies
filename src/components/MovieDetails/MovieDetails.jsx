@@ -1,6 +1,5 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchMovieDetails } from "services/movieApi";
 import { Loader } from "components/loader/loader";
 import { HiArrowLeft } from "react-icons/hi";
@@ -57,13 +56,15 @@ const MovieDetails = () => {
                    <h4>Additional information</h4>
                    <ul>
                     <li>
-                        <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+                        <Link to={`/movies/${movieId}/cast`} >Cast</Link>
                     </li>
                     <li>
-                        <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+                        <Link to={`/movies/${movieId}/reviews`} >Reviews</Link>
                     </li>
                    </ul>
+      <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
+      </Suspense>
         </div>
         </>
     )
