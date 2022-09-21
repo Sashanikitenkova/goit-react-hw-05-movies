@@ -11,6 +11,7 @@ const MovieDetails = () => {
     const [loading, setLoading] = useState(false);
     const location = useLocation();
     const backLinkHref = location.state?.from ?? '/movies';
+    
 
     useEffect(() => {
         const fetchMovieDetailsId = async () => {
@@ -56,10 +57,10 @@ const MovieDetails = () => {
                    <h4>Additional information</h4>
                    <ul>
                     <li>
-                        <Link to={`/movies/${movieId}/cast`} >Cast</Link>
+                        <Link to={`/movies/${movieId}/cast`}  state={{ from: location?.state?.from }} >Cast</Link>
                     </li>
                     <li>
-                        <Link to={`/movies/${movieId}/reviews`} >Reviews</Link>
+                        <Link to={`/movies/${movieId}/reviews`}  state={{ from: location?.state?.from }} >Reviews</Link>
                     </li>
                    </ul>
       <Suspense fallback={<div>Loading subpage...</div>}>
